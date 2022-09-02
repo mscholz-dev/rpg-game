@@ -1,0 +1,55 @@
+extends layout.pug
+
+block fight
+  div(class="container")
+      h1 FIGHT
+      h2 Player's stats
+      table(class="table")
+        thead 
+            tr
+              th Character
+              th Armor
+              th Health
+              th Magic
+              th Strength
+              th Speed        
+            tr
+              td(id="playerName") #{player.name}
+              td(id="playerArmor") #{player.armor}
+              td(id="playerHealth") #{player.health}
+              td(id="playerMagic") #{player.magic}
+              td(id="playerStrength") #{player.strength}
+              td(id="playerSpeed") #{player.speed}
+
+      h2 Hydra's stats
+      table(class="table")
+        thead
+            tr
+              th Monster
+              th Armor
+              th Health
+              th Magic
+              th Strength
+              th Speed 
+            tr
+              td(id="hydraName") #{hydra.name}
+              td(id="hydraArmor") #{hydra.armor}
+              td(id="hydraHealth") #{hydra.health}
+              td(id="hydraMagic") #{hydra.magic}
+              td(id="hydraStrength") #{hydra.strength}
+              td(id="hydraSpeed") #{hydra.speed}
+      div(id='round') Round number :
+        p(id="nbRound") 0
+      h3(class="m-3") Choose a Spell : 
+  div(class="container")
+    div(class="d-grid gap- d-md-block")
+      button(class="btn btn-primary m-2", type="button", value="", id="physicAttack") Physicall Attack 
+      button(class="btn btn-secondary m-2", type="button", value="", id="magicAttack") Magic attack
+      button(class="btn btn-light m-2", type="button", value="", id="armorBoost") Armor boost
+      button(class="btn btn-warning m-2", type="button", value="", id="strengthBoost") Strength boost
+      button(class="btn btn-danger m-2", type="button", value="", id="magicBoost") Magic boost
+      button(class="btn btn-info m-2", type="button", value="", id="speedBoost") Speed boost
+      button(class="btn btn-dark m-2", type="button", value="", id="healingSpell") Healing spell
+
+  script
+    include ../assets/js/actions.js

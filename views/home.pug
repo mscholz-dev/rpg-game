@@ -1,0 +1,23 @@
+extends layout.pug
+
+block home
+  header 
+    h1 WELCOME
+
+  div(class="container")
+    form(class="w-25", action="/", method="POST")
+
+      label(for="character") Choose a character
+      select(class="form-select", name="character", id="character")
+        each character in characters
+          option(value=character) #{character}
+
+      label(class="mt-3", for="name") Enter your name
+      input(class="form-control", type="text", name="name", id="name")
+
+      label(class="mt-3", for="level") Choose a level
+      select(class="form-select", name="level", id="level")
+        each level in levels
+          option(value=level) #{level}
+      input(class="mt-3 btn btn-warning", type="submit",value="Submit", id="button")
+
